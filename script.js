@@ -81,3 +81,9 @@ function handleProjectFormSubmit(event) {
 
     projectFormEl[0].reset();
 }
+
+projectFormEl.on('submit', handleProjectFormSubmit);
+projectDisplayEl.on('click', '.delete.project-btn', handleDeleteProject);
+dueDateInputEl.datepicker({minDate: 1 });
+
+setInterval(displayTime, 1000);
