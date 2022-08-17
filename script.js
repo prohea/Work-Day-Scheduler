@@ -1,47 +1,47 @@
 // Variables
-var timeDisplayEl = $('#time-display');
-var projectDisplayEl = $('#project-display');
-var projectModalEl = $('#project-modal');
-var projectFormEl = $('#project-form');
-var projectNameInputEl = $('#project-name-input');
-var projectTypeInputEl = $('#project-type-input');
-var hourlyRateInputEl = $('#hourly-rate-input');
-var dueDateInputEl = $('#due-date-input');
+var timeDisplayEl = $("#time-display");
+var projectDisplayEl = $("#project-display");
+var projectModalEl = $("#project-modal");
+var projectFormEl = $("#project-form");
+var projectNameInputEl = $("#project-name-input");
+var projectTypeInputEl = $("#project-type-input");
+var hourlyRateInputEl = $("#hourly-rate-input");
+var dueDateInputEl = $("#due-date-input");
 
 // Display Time
 function displayTime() {
-    var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
-    timeDisplayEl.text(rightNow);
+  var rightNow = moment().format("MMM DD, YYYY [at] hh:mm:ss a");
+  timeDisplayEl.text(rightNow);
 }
 
-//Print date to the page
-function printProjectDate(name, type, hourlyRate, dueDate) {
-    var projectRowEl = $('<tr>');
+// Print data to page
+function printProjectData(name, type, hourlyRate, dueDate) {
+  var projectRowEl = $("<tr>");
 
-    var projectNameTdEl = $('<td>').addClass('p-2').text(name);
+  var projectNameTdEl = $("<td>").addClass("p-2").text(name);
 
-    var projectTypeTdEl = $('<td>').addClass('p-2').text(type);
+  var projectTypeTdEl = $("<td>").addClass("p-2").text(type);
 
-    var rateTdEl = $('<td>').addClass('p-2').text(hourlyRate);
+  var rateTdEl = $("<td>").addClass("p-2").text(hourlyRate);
 
-    var dueDateTdEl = $('<td>').addClass('p-2').text(dueDate);
+  var dueDateTdEl = $("<td>").addClass("p-2").text(dueDate);
 
-    var daysToDate = moment(dueDate, 'MM/DD/YYYY').diff(moment(), 'days');
-    var daysLeftTdEl = $('<td>').addClass('p-2').text(daysToDate);
+  var daysToDate = moment(dueDate, "MM/DD/YYYY").diff(moment(), "days");
+  var daysLeftTdEl = $("<td>").addClass("p-2").text(daysToDate);
 
-    var totalEarnings = calculateTotalEarnings(hourlyRate, daysToDate);
+  var totalEarnings = calculateTotalEarnings(hourlyRate, daysToDate);
 
-//Chain
-var totalTdEl = $('<td>')
-    .addClass('p-2')
-    .text('$' + totalEarnings);
+  // Chain
+  var totalTdEl = $("<td>")
+    .addClass("p-2")
+    .text("$" + totalEarnings);
 
-var deleteProjectBtn = $('<td>')
-.addClass('p-2 delete-project-btn text-center')
-.text('X');
+  var deleteProjectBtn = $("<td>")
+    .addClass("p-2 delete-project-btn text-center")
+    .text("X");
 
-//List <td>
-projectRowEl.append(
+  // List <td>
+  projectRowEl.append(
     projectNameTdEl,
     projectTypeTdEl,
     rateTdEl,
@@ -49,41 +49,41 @@ projectRowEl.append(
     daysLeftTdEl,
     totalTdEl,
     deleteProjectBtn
-);
+  );
 
-projectDisplayEl.append(projectRowEl);
+  projectDisplayEl.append(projectRowEl);
 
-projectModalEl.modal('hide');
+  projectModalEl.modal("hide");
 }
 
 function calculateTotalEarnings(rate, days) {
-    var dailyTotal = rate * 8;
-    var total = dailyTotal * days;
-    return total;
+  var dailyTotal = rate * 8;
+  var total = dailyTotal * days;
+  return total;
 }
 
 function handleDeleteProject(event) {
-    console.log(event.target);
-    var btnClicked = $(event.target);
-    btnClicked.parent('tr').remove();
+  console.log(event.target);
+  var btnClicked = $(event.target);
+  btnClicked.parent("tr").remove();
 }
 
-//form submission
+// Form submission
 function handleProjectFormSubmit(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    var projectName = projectNameInputEl.val().trim();
-    var projectType = projectTypeInputEl.val().trim();
-    var hourlyRate = hourlyRateInputEl.val().trim();
-    var dueDate = dueDateInputEl.val().trim();
+  var projectName = projectNameInputEl.val().trim();
+  var projectType = projectTypeInputEl.val().trim();
+  var hourlyRate = hourlyRateInputEl.val().trim();
+  var dueDate = dueDateInputEl.val().trim();
 
-    printProjectData(projectName, projectType, hourlyRate, dueDate);
+  printProjectData(projectName, projectType, hourlyRate, dueDate);
 
-    projectFormEl[0].reset();
+  projectFormEl[0].reset();
 }
 
-projectFormEl.on('submit', handleProjectFormSubmit);
-projectDisplayEl.on('click', '.delete.project-btn', handleDeleteProject);
-dueDateInputEl.datepicker({minDate: 1 });
+projectFormEl.on("submit", handleProjectFormSubmit);
+projectDisplayEl.on("click", ".delete-project-btn", handleDeleteProject);
+dueDateInputEl.datepicker({ minDate: 1 });
 
 setInterval(displayTime, 1000);
