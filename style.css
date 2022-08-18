@@ -1,75 +1,72 @@
-:root {
-  --blue: #82caff;
-  --green: #57e964;
-  --light: #faf5ef;
-  --purple: #2b1b17;
-  --red: #f62817;
-  --primary: #070031;
-  --secondary: #6d92b2;
-  --success: #069026;
-  --info: #33a1b0;
-  --warning: #f2c10d;
-  --danger: #a40515;
-  --light: #f8f9fa;
-  --dark: black;
-}
-
 body {
-  font-family: "Zen Antique Soft", serif;
-  font-weight: 400;
-  background-color: var(--light);
-  color: var(--purple);
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  background-color: black;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
 }
 
-thead {
-  background-color: var(--red);
-  color: var(--light);
-  font-weight: 700;
+.jumbotron {
+  text-align: center;
+  background-color: rgb(26, 26, 84);
+  color: white;
+  border-radius: 0;
+  border-bottom: 10px solid black;
 }
 
-.custom-jumbotron,
-.custom-card .card-header,
-.custom-card .card-footer,
-.custom-modal .modal-header,
-.custom-modal .modal-footer {
-  background-color: var(--purple);
-  color: var(--light);
+.description {
+  white-space: pre-wrap;
 }
 
-.custom-card {
-  border-color: var(--purple);
+.time-block {
+  text-align: center;
+  border-radius: 15px;
 }
 
-.custom-card .card-body,
-.custom-modal .modal-body {
-  background-color: var(--light);
-  color: var(--purple);
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;
 }
 
-.custom-btn {
-  background-color: var(--light);
-  color: var(--purple);
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
 }
 
-.custom-btn:hover {
-  background-color: var(--green);
-  color: var(--purple);
+.past {
+  background-color: #d3d3d3;
+  color: white;
 }
 
-.custom-table tbody {
-  background-color: var(--purple);
-  color: var(--light);
+.present {
+  background-color: #ff6961;
+  color: white;
 }
 
-.delete-project-btn {
-  cursor: pointer;
+.future {
+  background-color: #77dd77;
+  color: white;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06aed5;
+  color: white;
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
 }
