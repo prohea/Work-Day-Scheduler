@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Federo&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -28,40 +28,63 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+
+    <main>
       <!-- Timeblocks go here -->
-      <table class="table table-hover table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="row">
+        <section class="col-12 col-md-4 col-lg-3">
+          <div class="custom-card text-white" style="width: 14rem">
+            <img
+              src="https://c.tenor.com/gJ18Jz7a-8QAAAAj/milk-and-mocha-smile.gif"
+              class="card-img-top"
+              alt="smile"
+            />
+            <div class="card-body bg-dark">
+              <h5 class="card-title">Calendar</h5>
+              <p class="card-text" input type="text" id="datepicker">Date:</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-12 col-md-8 col-lg-9">
+          <div id="schedule" class="table-responsive table-hover table-dark">
+            <table class="table table-bordered custom-table">
+              <thead>
+                <tr>
+                  <th scope="col">.</th>
+                  <th scope="col">Year</th>
+                  <th scope="col">Month</th>
+                  <th scope="col">Day</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2"></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

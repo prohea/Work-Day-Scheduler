@@ -1,8 +1,42 @@
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Federo', sans-serif;
   font-size: 16px;
   line-height: 1;
   background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+thead {
+  background-color: var(--red);
+  color: var(--light);
+  font-weight: 700;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: rgb(26, 26, 84);
+  color: white;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
+
+
+.custom-table tbody {
+  color: white;
+}
+
+.delete-project-btn {
+  cursor: pointer;
 }
 
 textarea {
@@ -12,14 +46,6 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
-}
-
-.jumbotron {
-  text-align: center;
-  background-color: rgb(26, 26, 84);
-  color: white;
-  border-radius: 0;
-  border-bottom: 10px solid black;
 }
 
 .description {
