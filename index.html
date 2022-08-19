@@ -18,6 +18,11 @@
       href="https://fonts.googleapis.com/css2?family=Federo&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
   </head>
@@ -40,9 +45,15 @@
               alt="smile"
             />
             <div class="card-body bg-dark">
-              <h5 class="card-title">Calendar</h5>
-              <p class="card-text" input type="text" id="datepicker">Date:</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title mb-n5">Calendar</h5>
+              <p class="card-text mb-5">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="date"
+                  placeholder="enter date"
+                />
+              </p>
             </div>
           </div>
         </section>
@@ -85,6 +96,8 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
