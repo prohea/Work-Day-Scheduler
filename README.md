@@ -26,6 +26,7 @@ jQuery, moment.js, bootstrap
 jQuery, moment.js
 
 # Deployed Project
+https://prohea.github.io/05-Work-Day-Scheduler/
 
 # Screenshot
 ![workdayscheduler](https://user-images.githubusercontent.com/108287341/185551403-4a60c221-b266-4f21-acdf-d64361d9eb64.png)
