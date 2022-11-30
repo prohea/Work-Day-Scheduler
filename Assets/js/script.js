@@ -23,14 +23,31 @@ function initializeSchedule() {
         //Add todo object to array
         toDoItems.push(todoObj);
     });
+
+    //Loop through timeblocks, save array of objects to local storage by stringifying it first
+    localStorage.setItem("todos", JSON.stringify(toDoItems));
 }
 
-//Loop through timeblocks, save array of objects to local storage by stringifying it first
-localStorage.setItem("todos", JSON.stringify(toDoItems));
-
 //Format timeblock colors depending on the time
+function setUpTimeBlocks() {
+    $timeBlocks.each(function () {
+        var $thisBlock = $(this);
+        var thisBlockHr = parseInt($thisBlock.attr("data-hour"));
 
-//Add style to time blocks to show where we are in the day
+        //Add style to time blocks to show where we are in the day
+        if (thisBlockHr == currentHour) {
+        $thisBlock.addClass("present").removeClass("past future");
+        }
+        if (thisBlockHr < currentHour) {
+        $thisBlock.addClass("past").removeClass("present future");
+        }
+         if (thisBlockHr > currentHour) {
+        $thisBlock.addClass("future").removeClass("past present");
+        }
+    });
+
+}
+
 
 //Loop through array then assign the text to the timeblock with data hour to hour
 
