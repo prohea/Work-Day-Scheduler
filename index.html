@@ -15,15 +15,10 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Federo&display=swap"
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
-    <link rel="stylesheet" href="/resources/demos/style.css" />
-    <link rel="stylesheet" href="./Assets/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -33,71 +28,11 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-
-    <main>
+    <div class="container">
       <!-- Timeblocks go here -->
-      <div class="row">
-        <section class="col-12 col-md-4 col-lg-3">
-          <div class="custom-card text-white" style="width: 14rem">
-            <img
-              src="https://c.tenor.com/gJ18Jz7a-8QAAAAj/milk-and-mocha-smile.gif"
-              class="card-img-top"
-              alt="smile"
-            />
-            <div class="card-body bg-dark">
-              <h5 class="card-title mb-n5">Calendar</h5>
-              <p class="card-text mb-5">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="date"
-                  placeholder="enter date"
-                />
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="col-12 col-md-8 col-lg-9">
-          <div id="schedule" class="table-responsive table-hover table-dark">
-            <table class="table table-bordered custom-table">
-              <thead>
-                <tr>
-                  <th scope="col">.</th>
-                  <th scope="col">Year</th>
-                  <th scope="col">Month</th>
-                  <th scope="col">Day</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2"></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </div>
-    </main>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="./Assets/script.js"></script>
   </body>
 </html>
