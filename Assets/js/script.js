@@ -45,15 +45,39 @@ function setUpTimeBlocks() {
         $thisBlock.addClass("future").removeClass("past present");
         }
     });
-
 }
 
+function renderSchedule() {
+    toDoItems = localStorage.getItem("todos");
+    toDoItems = JSON.parse(toDoItems);
 
-//Loop through array then assign the text to the timeblock with data hour to hour
+    //Loop through array then assign the text to the timeblock with data hour to hour
+    //Make a variable where then plug it it into the selector
+    for (var i =0; i < toDoItems.length; i++){
+        var itemHour = toDoItems[i].hours;
+        var itemText = toDoItems[i].text;
 
-//Make a variable where then plug it it into the selector
+        $("[data-hour=" +itemHour + "]").children("textarea").val(itemText);
+    }
+    console.log(toDoItems);
+}
 
-//See which item needs to update based on the hour of the button clicked matching
+function saveHandler() {
+    var $thisBlock = $(this).parent();
+
+    var hourToUpdate = $(this).parent().attr("data-hour");
+    var itemToAdd = (($(this).parent()).children("textarea")).val();
+
+    //See which item needs to update based on the hour of the button clicked matching
+    for (var j = 0; j < toDoItems.length; j++){
+        if (toDoItems[j].hour == hourToUpdate){
+            //Set its text to what was added 
+            toDoItems[j].text = itemToAdd;        
+        }
+    }
+    localStorage.setItem("todos", JSON.stringify(toDoItems));
+    renderSchedule();
+}
 
 //When the document loads
 
