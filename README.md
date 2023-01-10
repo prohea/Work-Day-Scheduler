@@ -23,10 +23,11 @@ jQuery, moment.js
 jQuery, moment.js, bootstrap
 
 # Technologies Used
-jQuery, moment.js
+jQuery, moment.js, html, css, javascript
 
 # Deployed Project
-https://prohea.github.io/05-Work-Day-Scheduler/
+https://github.com/prohea/Work-Life
+https://prohea.github.io/Work-Life/
 
 # Screenshot
-![workdayscheduler](https://user-images.githubusercontent.com/108287341/185551403-4a60c221-b266-4f21-acdf-d64361d9eb64.png)
+![Workday-Scheduler](/Assets/img/workday-scheduler.png)
